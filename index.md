@@ -78,10 +78,10 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Pyportal | What the item is used for | $54.95 | https://www.adafruit.com/product/4116 |
-| Power Supply | What the item is used for | $7.95 | https://www.adafruit.com/product/1994 |
-| MicroUSB Cable | What the item is used for | $2.95 |  https://www.adafruit.com/product/592 |
-| Micro SD Card | What the item is used for | $19.99 |  https://www.adafruit.com/product/2693 |
+| Pyportal | Display Screen for Project | $54.95 | https://www.adafruit.com/product/4116 |
+| Power Supply | To Provide Power to PyPortal | $7.95 | https://www.adafruit.com/product/1994 |
+| MicroUSB Cable | To Connect PyPortal to Computer | $2.95 |  https://www.adafruit.com/product/592 |
+| Micro SD Card | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
