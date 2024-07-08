@@ -45,10 +45,10 @@ For your second milestone, explain what you've worked on since your previous mil
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-[![Watch the video]([(https://www.youtube.com/watch?v=5C1-feZRntU)](https://www.youtube.com/watch?v=5C1-feZRntU)
+[![Watch the video](https://[https://www.youtube.com/watch?v=5C1-feZRntU/hqdefault.jpg)](https://www.youtube.com/embed/5C1-feZRntU)
 
-[<img src="https://www.youtube.com/watch?v=5C1-feZRntU" width="600" height="300"
-/>](https://www.youtube.com/watch?v=5C1-feZRntU)
+[<img src="https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg" width="600" height="300"
+/>](https://www.youtube.com/embed/5C1-feZRntU)
 
 For my first milestone I made certain the air quality display on the PyPortal was working.  The first step in this was to connect the PyPortal to my computer and download all of the correct libraries into the CIRCUITPY file on my computer.  The next step was for me to connect the PyPortal display to my wifi by using the example code on the adafruit website.  This was the first issue I had since the PyPortal was displaying "AttributeError: 'dict' object has no attribute 'ssid'" , it turns out there was another library that was nessecary to the project that was not shown on the website.  The issue was that I was missing that library.  Finally, I had to input the zip code for my area and the air quality should be displayed.  The issue was that the PyPortal was not showing anything on it's screen and the serial console was displaying "Reply is OK! Response is -1" which is not a valid number for air quality.  The fix to this problem was a little easier, because it turns out my zipcode did not have data from the Air Quality Index used by the code from adafruit, so I changed the zipcode to the nearest one with data.  My plan for the future is to incorporate additional code to change the display and to assemble a magnetic case for the pyportal.
 
