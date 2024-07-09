@@ -44,7 +44,6 @@ For your second milestone, explain what you've worked on since your previous mil
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-[![Watch the video](https://[https://www.youtube.com/watch?v=5C1-feZRntU/hqdefault.jpg)](https://www.youtube.com/embed/5C1-feZRntU)
 
 [<img src="https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg" width="600" height="300"
 />](https://www.youtube.com/embed/5C1-feZRntU)
