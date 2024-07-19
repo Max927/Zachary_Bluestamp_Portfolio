@@ -45,16 +45,135 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
+import os
+import adafruit_connection_manager
+import board
+import busio
+from adafruit_esp32spi import adafruit_esp32spi
+from digitalio import DigitalInOut
+import adafruit_requests
+import adafruit_touchscreen
+from adafruit_pybadger import pybadger
 
-void loop() {
-  // put your main code here, to run repeatedly:
+# Get WiFi details, ensure these are setup in settings.toml
+ssid = os.getenv("CIRCUITPY_WIFI_SSID")
+password = os.getenv("CIRCUITPY_WIFI_PASSWORD")
 
-}
+# If you are using a board with pre-defined ESP32 Pins:
+esp32_cs = DigitalInOut(board.ESP_CS)
+esp32_ready = DigitalInOut(board.ESP_BUSY)
+esp32_reset = DigitalInOut(board.ESP_RESET)
+
+spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
+radio = adafruit_esp32spi.ESP_SPIcontrol(spi, esp32_cs, esp32_ready, esp32_reset)
+print("Connecting to AP...")
+while not radio.is_connected:
+    try:
+        radio.connect_AP(ssid, password)
+    except RuntimeError as e:
+        print("could not connect to AP, retrying: ", e)
+        continue
+print("Connected to", str(radio.ssid, "utf-8"), "\tRSSI:", radio.rssi)
+
+# Initialize a requests session
+pool = adafruit_connection_manager.get_radio_socketpool(radio)
+ssl_context = adafruit_connection_manager.get_radio_ssl_context(radio)
+requests = adafruit_requests.Session(pool, ssl_context)
+
+# These pins are used as both analog and digital! XL, XR and YU must be analog
+# and digital capable. YD just need to be digital
+ts = adafruit_touchscreen.Touchscreen(
+    board.TOUCH_XL,
+    board.TOUCH_XR,
+    board.TOUCH_YD,
+    board.TOUCH_YU,
+    calibration=((5200, 59000), (5800, 57000)),
+    size=(320, 240),
+)
+
+pybadger.show_badge(
+    name_string="Zach",
+    hello_string="Hello there!",
+    my_name_is_string="I am",
+    hello_scale=2,
+    my_name_is_scale=2,
+    name_scale=3
+)
+
+cur_example = 0
+prev_touch = None
+while True:
+    p = ts.touch_point
+    if p and not prev_touch:
+        cur_example += 1
+        if cur_example >= 3:
+            cur_example = 0
+        print(cur_example)
+    prev_touch = p
+
+    if cur_example == 0:
+        pybadger.show_business_card(
+            image_name="Blinka_PyPortal.bmp",
+            name_string="Air Quality and Weather",
+            name_scale=2,
+            email_string_one="By",
+            email_string_two="Zachary Maxson",
+        )
+    elif cur_example == 1:
+        zip_code = "90210"
+        JSON_GET_URL = f"http://www.airnowapi.org/aq/forecast/zipCode/?format=application/json&zipCode={zip_code}&API_KEY=3C7439CE-B94E-42A1-B208-8E3BC4E5A9F8"
+
+        # Define a custom header as a dict.
+        headers = {"user-agent": "blinka/1.0.0"}
+
+        print("Fetching JSON data from %s..." % JSON_GET_URL)
+        with requests.get(JSON_GET_URL, headers=headers) as response:
+            print("-" * 60)
+            json_data = response.json()
+            AQI = json_data[1]["AQI"]
+            print(AQI)
+            Value = "AQI: " + str(AQI)
+            pybadger.show_badge(
+                name_string=Value,
+                hello_string=f"Air Quality Index for",
+                my_name_is_string=zip_code,
+                hello_scale=2,
+                my_name_is_scale=2,
+                name_scale=3
+            )
+
+    elif cur_example == 2:
+        LOC = "San Diego, US"
+        JSON_GET_URL = f"http://api.openweathermap.org/data/2.5/weather?q={LOC}&appid=f8a3c07d5451203ad807ec226238dc91"
+
+        # Define a custom header as a dict.
+        headers = {"user-agent": "blinka/1.0.0"}
+
+        print("Fetching JSON data from %s..." % JSON_GET_URL)
+        with requests.get(JSON_GET_URL, headers=headers) as response:
+            print("-" * 60)
+            json_data = response.json()
+            Temp = json_data["main"]["temp"]
+            Clouds = json_data["weather"][0]["description"]
+            TempF = (Temp - 273.15) * 9 / 5 + 32
+            print("Temperature:", TempF)
+            print("Description:", Clouds)
+            AIR = str(round(TempF, 1))  # Rounded to 1 decimal place
+
+            # Center the SKY text
+            max_length = 20
+            SKY = Clouds.center(max_length)
+
+            city, country = LOC.split(", ")
+            pybadger.show_badge(
+                name_string=" Temp: " + AIR + "F\n" + SKY,  # Added spaces to center the text
+                hello_string=f"Weather Status for",
+                my_name_is_string=f"{city}, {country}",
+                hello_scale=2,
+                my_name_is_scale=2,
+                name_scale=3
+            )
+
 ```
 
 # Bill of Materials
@@ -66,4 +185,4 @@ void loop() {
 | MicroUSB Cable | To Connect PyPortal to Computer | $2.95 |  https://www.adafruit.com/product/592 |
 | Micro SD Card | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
 | Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | For Screwing the Case Together | $16.95 |  https://www.adafruit.com/product/3299 |
-| Pyportal 3d Printed Case | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
+| Pyportal 3d Printed Case | Case for Pyportal | $16.29 |  |
