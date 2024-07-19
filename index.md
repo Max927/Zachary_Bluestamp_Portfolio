@@ -185,8 +185,8 @@ while True:
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Pyportal | Display Screen for Project | $54.95 | <a href="https://www.adafruit.com/product/4116"> Pyportal Link <a/> |
-| Power Supply | To Provide Power to PyPortal | $7.95 | <a href=https://www.adafruit.com/product/1994> Power Supply Link <a/> |
-| MicroUSB Cable | To Connect PyPortal to Computer | $2.95 | <a href=https://www.adafruit.com/product/592> MicroUSB Cable Link <a/> |
-| Micro SD Card | Extra Storage | $19.99 |  <a href=https://www.adafruit.com/product/2693> Micro SD Card Link <a/> |
-| Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | For Screwing the Case Together | $16.95 |  <a href=https://www.adafruit.com/product/3299> Screw Set Link <a/> |
-| Pyportal 3d Printed Case | Case for Pyportal | $16.29 | <a href=https://crowdcraft.io/> Case Link<a/>|
+| Power Supply | To Provide Power to PyPortal | $7.95 | <a href="https://www.adafruit.com/product/1994"> Power Supply Link <a/> |
+| MicroUSB Cable | To Connect PyPortal to Computer | $2.95 | <a href="https://www.adafruit.com/product/592"> MicroUSB Cable Link <a/> |
+| Micro SD Card | Extra Storage | $19.99 |  <a href="https://www.adafruit.com/product/2693"> Micro SD Card Link <a/> |
+| Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | For Screwing the Case Together | $16.95 |  <a href="https://www.adafruit.com/product/3299"> Screw Set Link <a/> |
+| Pyportal 3d Printed Case | Case for Pyportal | $16.29 | <a href="https://crowdcraft.io/"> Case Link<a/>|
