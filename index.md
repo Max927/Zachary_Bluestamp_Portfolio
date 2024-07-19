@@ -92,10 +92,22 @@ ts = adafruit_touchscreen.Touchscreen(
     size=(320, 240),
 )
 
+def center_text(text, width):
+    return text.center(width)
+
+def format_weather_text(temp, sky, width):
+    # Format temperature and sky description to fit within the given width
+    temp_line = f"Temp: {temp}F"
+    sky_line = sky
+    
+    return f"{center_text(temp_line, width)}\n{center_text(sky_line, width)}"
+
+badge_width = 20
+
 pybadger.show_badge(
-    name_string="Zach",
-    hello_string="Hello there!",
-    my_name_is_string="I am",
+    name_string=center_text("Zach", badge_width),
+    hello_string=center_text("Hello there!", badge_width),
+    my_name_is_string=center_text("I am", badge_width),
     hello_scale=2,
     my_name_is_scale=2,
     name_scale=3
@@ -115,10 +127,10 @@ while True:
     if cur_example == 0:
         pybadger.show_business_card(
             image_name="Blinka_PyPortal.bmp",
-            name_string="Air Quality and Weather",
+            name_string=center_text("Air Quality and Weather", badge_width),
             name_scale=2,
-            email_string_one="By",
-            email_string_two="Zachary Maxson",
+            email_string_one=center_text("By", badge_width),
+            email_string_two=center_text("Zachary Maxson", badge_width),
         )
     elif cur_example == 1:
         zip_code = "90210"
@@ -135,9 +147,9 @@ while True:
             print(AQI)
             Value = "AQI: " + str(AQI)
             pybadger.show_badge(
-                name_string=Value,
-                hello_string=f"Air Quality Index for",
-                my_name_is_string=zip_code,
+                name_string=center_text(Value, badge_width),
+                hello_string=center_text(f"Air Quality Index for", badge_width),
+                my_name_is_string=center_text(zip_code, badge_width),
                 hello_scale=2,
                 my_name_is_scale=2,
                 name_scale=3
@@ -161,19 +173,20 @@ while True:
             print("Description:", Clouds)
             AIR = str(round(TempF, 1))  # Rounded to 1 decimal place
 
-            # Center the SKY text
-            max_length = 20
-            SKY = Clouds.center(max_length)
+            # Format and center the weather text
+            formatted_weather = format_weather_text(AIR, Clouds, badge_width)
 
             city, country = LOC.split(", ")
             pybadger.show_badge(
-                name_string=" Temp: " + AIR + "F\n" + SKY,  # Added spaces to center the text
-                hello_string=f"Weather Status for",
-                my_name_is_string=f"{city}, {country}",
+                name_string=formatted_weather,
+                hello_string=center_text(f"Weather Status for", badge_width),
+                my_name_is_string=center_text(f"{city}, {country}", badge_width),
                 hello_scale=2,
                 my_name_is_scale=2,
                 name_scale=3
             )
+
+
 
 
 ```
