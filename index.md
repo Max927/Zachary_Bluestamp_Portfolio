@@ -42,7 +42,7 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 **
 
 # Code
-![Headstone Image](Screenshot 2024-07-19 071840.png)
+![Library Image](Screenshot 2024-07-19 071840.png)
 
 ```c++
 import os
