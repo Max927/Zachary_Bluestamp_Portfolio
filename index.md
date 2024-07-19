@@ -94,13 +94,6 @@ ts = adafruit_touchscreen.Touchscreen(
 def center_text(text, width):
     return text.center(width)
 
-def format_weather_text(temp, sky, width):
-    # Format temperature and sky description to fit within the given width
-    temp_line = f"Temp: {temp}F"
-    sky_line = sky
-    
-    return f"{center_text(temp_line, width)}\n{center_text(sky_line, width)}"
-
 badge_width = 20
 
 pybadger.show_badge(
@@ -172,22 +165,19 @@ while True:
             print("Description:", Clouds)
             AIR = str(round(TempF, 1))  # Rounded to 1 decimal place
 
-            # Format and center the weather text
-            formatted_weather = format_weather_text(AIR, Clouds, badge_width)
+            # Center the SKY text
+            max_length = 20
+            SKY = Clouds.center(max_length)
 
             city, country = LOC.split(", ")
             pybadger.show_badge(
-                name_string=formatted_weather,
-                hello_string=center_text(f"Weather Status for", badge_width),
-                my_name_is_string=center_text(f"{city}, {country}", badge_width),
-                hello_scale=2,
-                my_name_is_scale=2,
-                name_scale=3
-            )
-
-
-
-
+    name_string=center_text("Temp: " + AIR + "F", badge_width) + "\n" + center_text(SKY, badge_width),
+    hello_string=center_text(f"Weather Status for", badge_width),
+    my_name_is_string=center_text(f"{city}, {country}", badge_width),
+    hello_scale=2,
+    my_name_is_scale=2,
+    name_scale=3
+)
 ```
 
 # Bill of Materials
