@@ -19,11 +19,14 @@ You should comment out all portions of your portfolio that you have not complete
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+For my final milestone I worked on the touchscreen interface to integrate the two projects with one another.  Originally I was going to try to use the "Making a PyPortal User Interface with DisplayIO" project to display the two projects.  I thought it would work since the example of this project had 3 different screens with different displays on them, and I thought that I would be able to just make two of the screens the displays from the first two projects.  However, when trying to figure out the code, there were several issues, first of all several parts of the code were trying to access the wifi at the same time and the pyportal couldn't handle that.  Another issue was when I would try to run the display with the air quality code in it, the actual touchscreen wouldn't function at all, which I still have no idea why that was the case.  So eventually, I scrapped using that code as the base and tried to find another way to switch screens.  Then I found the PyBadger event badge code, which switches between 3 screens when you tap the pyportal anywhere.  I wanted to try this out, so I used it as a base and imported the code from both the weather and air quality projects.  The way the code works is that there are 3 displays and by touching the screen, the display flips between them.  Originally the 2nd and 3rd displays were for your name and email address, but I used code that constructs a URL with the necessary parameters and sends a GET request to the respective API for each project. It then extracts the data, being the AQI, tempurature and weather conditions, from the JSON response and displays it on the badge in each respective display.
+
+
+
+
+
+
+
 
 
 # Second Milestone
