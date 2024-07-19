@@ -1,10 +1,6 @@
 # PyPortal Air Quality Display
 My original project was the air quality display on the pyportal, but on top of that I decided to add another project, a weather station that displays the tempurature and the weather conditions in a certain city.  To integrate the two together I utilyzed the pyportal's touchscreen functionality to make an interface that switches between the two.  Over the course of the project I made many mistakes and learned a ton, but if I had to pick one take away from this experience, it would be that I need to slow down sometimes and look around before assuming the worst.
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
+
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -43,7 +39,7 @@ For my first milestone I made certain the air quality display on the PyPortal wa
 
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+#Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create #professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
