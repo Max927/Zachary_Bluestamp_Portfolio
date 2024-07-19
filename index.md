@@ -6,7 +6,6 @@ My original project was the air quality display on the pyportal, but on top of t
 |:--:|:--:|:--:|:--:|
 | Zachary M. | Willow Glen High School | Electrical Engineering | Incoming Senior
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Final Image](image.jpg)
   
