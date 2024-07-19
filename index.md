@@ -184,7 +184,7 @@ while True:
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Pyportal | Display Screen for Project | $54.95 | https://www.adafruit.com/product/4116 |
+| Pyportal | Display Screen for Project | $54.95 | <a href="https://www.adafruit.com/product/4116" <a/> |
 | Power Supply | To Provide Power to PyPortal | $7.95 | https://www.adafruit.com/product/1994 |
 | MicroUSB Cable | To Connect PyPortal to Computer | $2.95 |  https://www.adafruit.com/product/592 |
 | Micro SD Card | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
