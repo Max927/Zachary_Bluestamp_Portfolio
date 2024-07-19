@@ -200,4 +200,4 @@ while True:
 | MicroUSB Cable | To Connect PyPortal to Computer | $2.95 |  https://www.adafruit.com/product/592 |
 | Micro SD Card | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
 | Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | For Screwing the Case Together | $16.95 |  https://www.adafruit.com/product/3299 |
-| Pyportal 3d Printed Case | Case for Pyportal | $16.29 |  |
+| Pyportal 3d Printed Case | Case for Pyportal | $16.29 | https://crowdcraft.io/ |
