@@ -1,6 +1,5 @@
 # PyPortal Air Quality Display
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
-
+My original project was the air quality display on the pyportal, but on top of that I decided to add another project, a weather station that displays the tempurature and the weather conditions in a certain city.  To integrate the two together I utilyzed the pyportal's touchscreen functionality to make an interface that switches between the two.  Over the course of the project I made many mistakes and learned a ton, but if I had to pick one take away from this experience, it would be that I need to slow down sometimes and look around before assuming the worst.
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
@@ -31,7 +30,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PbvK0-TP87c?si=uLyuyqo_LxeEn3MT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For mt second milestone I decided to add another project on top of my baseline air quality display.  Which was the 
+For my second milestone I decided to add another project on top of my baseline air quality display.  The project I decided to add was the weather station from adafruit since I thought it went hand in hand with the air quality display.  The weather station was much easier to setup than the first project since I already had the libraries installed from the air quality display, I had one error which was quickly resovled when I realized I was missing a library nessecary for the code to run.  For the setup I simply took the example code from the adafruit website walkthrough and put it in my code.py file then imported the one additional library into the lib folder on top of the files from the air quality display.  Also halfway through this milestone I recieved the pieces for the case for my pyportal.  The case was relatively easy to assemble since there was only three pieces.  The first step was to put the back cover over the exposed circuit board on the pyportal, then there was a bracket that screwed into the back cover to keep the pyportal in place.  Finally there was a front cover that snapped into place finishing the case.  In my next milestone I plan to use the touchscreen functionality on the pyportal display in order to make an interface that allows a user to switch between the two projects by touching the screen.  
 
 # First Milestone
 
@@ -69,6 +68,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Power Supply | To Provide Power to PyPortal | $7.95 | https://www.adafruit.com/product/1994 |
 | MicroUSB Cable | To Connect PyPortal to Computer | $2.95 |  https://www.adafruit.com/product/592 |
 | Micro SD Card | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
+| Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | For Screwing the Case Together | $16.95 |  https://www.adafruit.com/product/3299 |
+| Pyportal 3d Printed Case | Extra Storage | $19.99 |  https://www.adafruit.com/product/2693 |
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
